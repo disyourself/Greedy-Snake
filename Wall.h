@@ -17,11 +17,14 @@ public:
 	void drawWall();
 	void setWall(int x, int y, char c); //根据索引设置二维数组里的内容
 	char getWall(int x,int y);	//获取当前位置的符号
+	int wall_socore=0;
 	
+
 private:
 
 	char gameArray[ROW][COL];
 
+	
 };
 
 

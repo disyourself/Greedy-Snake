@@ -130,3 +130,35 @@ bool Snake::move(char key)
 	isLoop = false;
 	return true;
 }
+
+int Snake::getSleepTime()
+{
+	int sleepTime = 0;
+	int lenth = getSankeLenth();
+	if (lenth < 5) sleepTime = 300;
+	else if (lenth >= 5 && lenth <= 10) sleepTime = 200;
+	else  sleepTime = 100;
+
+	return sleepTime;
+}
+
+int Snake::getSankeLenth()
+{
+	int lenth = 0;
+	Point* cur = pHead;
+	while (cur)
+	{
+		lenth++;
+		cur = cur->next;
+	}
+
+	return lenth;
+}
+
+int Snake::getScore()
+{
+	int size = getSankeLenth();
+	int score = (size - 3) * 100;
+
+	return score;
+}

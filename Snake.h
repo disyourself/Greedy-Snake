@@ -41,5 +41,14 @@ public:
 	void deletePoint();
 
 	bool move(char key);
+
+	//设定难度
+	//获取刷屏时间
+	int getSleepTime();
+	//获取she长度
+	int getSankeLenth();
+
+	int getScore();
+
 };
 

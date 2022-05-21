@@ -8,6 +8,16 @@
 using namespace std;
 
 
+static void gotoXY(HANDLE hOut, int x, int y) 
+{
+	COORD pos;
+	pos.X = x;
+	pos.Y = y;
+	SetConsoleCursorPosition(hOut, pos);
+}
+HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);	//定义显示器句柄
+
+
 
 int main() {
 	
@@ -27,6 +37,8 @@ int main() {
 	Food food(wall);
 	Snake snake(wall,food);
 	
+	
+
 	snake.initSnake();
 	food.setFood();
 
@@ -63,9 +75,15 @@ int main() {
 				if (snake.move(key))
 				{
 					//移动成功
-					system("cls");
+					//system("cls");
+					gotoXY(hOut, 0, 0);
+
 					wall.drawWall();
-					Sleep(100);
+					wall.wall_socore = snake.getScore();
+					//回去找头的位置
+					//gotoXY(hOut,0, 0);
+
+					Sleep(snake.getSleepTime());
 				}
 				else {
 					isDead = true;

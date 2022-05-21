@@ -1,5 +1,5 @@
 #include "Wall.h"
-
+#include "Snake.h"
 void Wall::initWall()
 {
 
@@ -23,7 +23,8 @@ void Wall::drawWall()
 		{
 			cout << gameArray[i][j]<<' ';
 		}
-		if (i == 5)cout << " - created by christian";
+		if (i == 4)cout << " - created by disyourself";
+		if (i == 5)cout << " - Score :" << wall_socore;
 		if (i == 6)cout << " - a : left";
 		if (i == 7)cout << " - d : right";
 		if (i == 8)cout << " - w : up";
